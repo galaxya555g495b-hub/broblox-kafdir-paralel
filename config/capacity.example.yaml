@@ -1,0 +1,27 @@
+profiles:
+  dev:
+    max_capacity: 200
+    parallel_workers: 8
+    queue_limit: 400
+    auto_scale:
+      enabled: false
+      min_workers: 2
+      max_workers: 8
+
+  staging:
+    max_capacity: 800
+    parallel_workers: 16
+    queue_limit: 1600
+    auto_scale:
+      enabled: true
+      min_workers: 8
+      max_workers: 24
+
+  prod:
+    max_capacity: 2000
+    parallel_workers: 32
+    queue_limit: 5000
+    auto_scale:
+      enabled: true
+      min_workers: 16
+      max_workers: 64
